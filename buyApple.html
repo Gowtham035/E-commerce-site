@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Purchase</title>
+    <style>
+        /* Inline CSS for styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .Products {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .Products h1 span {
+            color: #28a745;
+        }
+
+        .Products_box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .Products_card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .Products_image img {
+            width: 150px;
+            height: auto;
+        }
+
+        .Products_info {
+            margin-top: 15px;
+        }
+
+        .Products_info h2 {
+            margin-bottom: 10px;
+        }
+
+        .Products_info p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .Products_info h3 {
+            color: #28a745;
+        }
+
+        .Products_icon i {
+            color: #f5c518;
+        }
+
+        .Products_btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        form input, form select {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .message {
+            margin-top: 10px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="Products" id="Products">
+        <h1>Our <span>Products</span></h1>
+        <div class="Products_box">
+            <div class="Products_card">
+                <div class="Products_image">
+                    <img src="images/watch_1-removebg-preview.png" alt="Apple Series Watch">
+                </div>
+
+                <div class="small_card">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+
+                <div class="Products_info">
+                    <h2>Apple Series</h2>
+                    <p>Milanese Loop, flexible stainless steel mesh band with magnetic closure.</p>
+                    <h3>Rs: 75000</h3>
+                    <div class="Products_icon">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- Purchase Form -->
+                <form id="purchaseForm" onsubmit="buyProduct(event)">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <input type="text" id="mobile" placeholder="Mobile No" required>
+                    <input type="text" id="address" placeholder="Address" required>
+                    <input type="text" id="city" placeholder="City" required>
+                    <input type="text" id="location" placeholder="Near Location" required>
+                    <input type="number" id="quantity" placeholder="Quantity" required min="1" value="1">
+                    <input type="text" id="price" value="75000" readonly>
+                    <button type="submit">Buy Now</button>
+                </form>
+
+                <div class="message" id="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inline JavaScript for form submission
+        function buyProduct(event) {
+            event.preventDefault();
+
+            // Capture form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const mobile = document.getElementById('mobile').value;
+            const address = document.getElementById('address').value;
+            const city = document.getElementById('city').value;
+            const location = document.getElementById('location').value;
+            const quantity = document.getElementById('quantity').value;
+            const price = document.getElementById('price').value;
+
+            const totalPrice = quantity * price;
+
+            // Display a confirmation message
+            const message = `Thank you, ${name}! Your order for ${quantity} Apple Series Watch(s) at Rs: ${totalPrice} has been placed successfully!`;
+            document.getElementById('message').textContent = message;
+
+            // Reset the form
+            document.getElementById('purchaseForm').reset();
+        }
+    </script>
+
+</body>
+</html>

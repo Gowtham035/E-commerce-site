@@ -1,0 +1,68 @@
+/*<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Regular Expression</h1>
+<h2>The g Modifier</h2>
+
+<p>A global search for "because" in a string:</p>
+
+<p id="js"></p>
+
+<script>
+let text = "no word end with because because because is a conjuction?";
+let pattern = /because/g; 
+let result = text.match(pattern);
+
+document.getElementById("js").innerHTML = result;
+</script>
+
+</body>
+</html>*/
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<body>
+<h1>JavaScript Regular Expressions</h1>
+<h2>The d modifier</h2>
+<p>Match all that starts or ends with ss or bb:</p>
+<p id="js"></p>
+
+<script>
+let text = "ssssbb"; 
+let result = text.match(/(ss)(bb)(ss)/d);
+document.getElementById("demo").innerHTML = result;
+</script>
+
+</body>
+
+<br>
+<br>
+<br>
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JavaScript Regular Expression</h1>
+<h2>Using [ ] to find a range of characters</h2>
+
+<p>A global search for the character "h":</p>
+
+<p id="js"></p>
+
+<script>
+let text = "no word end with because because because is a conjuction?";
+let pattern = /[a]/g;
+let result = text.match(pattern);
+
+document.getElementById("js").innerHTML = result;
+</script>
+
+</body>
+</html>
+
+

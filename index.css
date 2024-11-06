@@ -1,0 +1,52 @@
+/* Contact Form Styles */
+.contact-form-container {
+    margin-top: 30px;
+}
+
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-form-container input,
+.contact-form-container textarea {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form-container button {
+    background-color: #ff6347;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form-container button:hover {
+    background-color: #e5533d;
+}
+
+/* Success Message Styles */
+#successMessage {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: yellowgreen;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+#successMessage.show {
+    display: block;
+}
+
+/* Hidden Class for Notification */
+.hidden {
+    display: none;
+}
